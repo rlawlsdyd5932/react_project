@@ -30,94 +30,121 @@ function Dashboard() {
   };
 
   const reportData = [
-    { id: 1, title: 'XX 접수', date: '2023-06-01', queries: 0 },
-    { id: 2, title: 'XX 접수', date: '2023-06-02', queries: 0 },
-    { id: 3, title: 'XX 접수', date: '2023-06-03', queries: 0 },
-    { id: 4, title: 'XX 접수', date: '2023-06-04', queries: 0 },
-    { id: 5, title: 'XX 접수', date: '2023-06-05', queries: 0 },
+    { id: 35, title: 'XX 같이 볼사람 1', date: '2024-06-03', queries: 0 },
+    { id: 34, title: 'XX 같이 볼사람 1', date: '2024-06-03', queries: 0 },
+    { id: 33, title: 'XX 같이 볼사람 1', date: '2023-06-03', queries: 0 },
+    { id: 32, title: 'XX 같이 볼사람 1', date: '2024-06-03', queries: 0 },
+    { id: 31, title: 'XX 같이 볼사람 1', date: '2024-06-03', queries: 0 },
   ];
 
   const inquiryData = [
-    { id: 34, title: '문의 제목', status: '진행중', date: '2024-06-03', type: '문의', control: '버튼' },
-    { id: 33, title: '문의 제목', status: '완료', date: '2024-06-02', type: '문의', control: '버튼' },
-    { id: 32, title: '문의 제목', status: '완료', date: '2024-06-01', type: '문의', control: '버튼' },
+    { id: 36, title: '공연 프로그램북이나 공식MD를 구입하고 싶습니다.', status: '답변완료', date: '2024-06-03', type: '전시회', control: '버튼' },
+    { id: 35, title: '공연장에 몇 시까지 도착해야 하나요?', status: '답변완료', date: '2024-06-02', type: '행사/축제', control: '버튼' },
+    { id: 34, title: '공연장에 갈 때 옷차림에 제한이 있나요?', status: '답변완료', date: '2024-06-01', type: '공연', control: '버튼' },
+    { id: 33, title: '비어있는 좌석으로 자리를 옮겨도 되나요?', status: '답변완료', date: '2024-06-01', type: '팝업', control: '버튼' },
+    { id: 32, title: '공연시작 시산에 늦었어요.늦게라도 들어갈 수 있나요?', status: '답변완료', date: '2024-06-01', type: '뮤지컬', control: '버튼' },
   ];
 
   const notices = [
-    { id: 32, title: '공지사항 제목 1', date: '2024-06-03' },
-    { id: 31, title: '공지사항 제목 2', date: '2024-06-02' },
-    { id: 30, title: '공지사항 제목 3', date: '2024-06-01' },
-    { id: 29, title: '공지사항 제목 4', date: '2024-06-01' },
-    { id: 28, title: '공지사항 제목 5', date: '2024-06-01' },
+    { id: 32, title: '[공지사항] 얼리벗 업데이트 사항 공지', date: '2024-06-03' },
+    { id: 31, title: '[이벤트] 얼리벗 신규회원 이벤트!', date: '2024-06-02' },
+    { id: 30, title: '[공지사항] 얼리벗 개인정보 처리방침 변경 안내(6/7)', date: '2024-06-01' },
+    { id: 29, title: '[공지사항] 어리버드 티켓 정보 서비스 업데이트 공지', date: '2024-06-01' },
+    { id: 28, title: '[이벤트] 얼리벗 신규 오픈 이벤트', date: '2024-06-01' },
   ];
 
   return (
     <Box className="dashboard-container">
       <Box className="dashboard-header">
-        <Typography className="dashboard-title">오늘의 허니팟</Typography>
-        <Paper className="dashboard-summary">
-          <Typography variant="h6">20개</Typography>
-        </Paper>
+        <Box className="dashboard-title">오늘의 허니팟
+        <Typography variant="h7" className="dashboard-summary">20개</Typography>
+        </Box>
       </Box>
       <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
-          <Paper className="dashboard-chart">
+          <Paper className="dashboard-chart" sx={{ borderRadius: '20px', border: '1px solid #FFB755'}}>
             <Typography className="chart-title">월별 허니팟</Typography>
-            <Bar data={monthlyChartData} />
+            <Bar data={monthlyChartData}/>
           </Paper>
         </Grid>
         <Grid item xs={12} md={6}>
-          <Paper className="dashboard-chart">
+          <Paper className="dashboard-chart" sx={{ borderRadius: '20px', border: '1px solid #FFB755'}}>
             <Typography className="chart-title">장르별 허니팟</Typography>
             <Bar data={dailyChartData} />
           </Paper>
         </Grid>
       </Grid>
-      <Grid container spacing={2} sx={{ mt: 2 }}>
-        <Grid item xs={4}>
-          <Paper className="dashboard-info">
+      <Grid container spacing={2} sx={{ mt: 2 }} direction="row">
+        <Grid item>
+          <Paper className="dashboard-info" sx={{ borderRadius: '20px', border: '1px solid #FFB755'}}>
             <Typography className="info-title">매칭 횟수</Typography>
-            <Typography>전체: 45,912</Typography>
-            <div className="horizontal-line"></div>
-            <Typography>오늘: 546</Typography>
+            <Box className="info-content">
+              <Box className="info-item">
+                <Typography>전체</Typography>
+                <Typography>45,912</Typography>
+              </Box>
+              <div className="horizontal-line"></div>
+              <Box className="info-item">
+                <Typography>오늘</Typography>
+                <Typography>546</Typography>
+              </Box>
+            </Box>
           </Paper>
         </Grid>
-        <Grid item xs={4}>
-          <Paper className="dashboard-info">
+        <Grid item>
+          <Paper className="dashboard-info" sx={{ borderRadius: '20px', border: '1px solid #FFB755'}}>
             <Typography className="info-title">1:1문의</Typography>
-            <Typography>전체: 45,912</Typography>
-            <Typography>오늘: 2</Typography>
+            <Box className="info-content">
+              <Box className="info-item">
+                <Typography>전체</Typography>
+                <Typography>45,912</Typography>
+              </Box>
+              <div className="horizontal-line"></div>
+              <Box className="info-item">
+                <Typography>오늘</Typography>
+                <Typography>2</Typography>
+              </Box>
+            </Box>
           </Paper>
         </Grid>
-        <Grid item xs={4}>
-          <Paper className="dashboard-info">
+        <Grid item>
+          <Paper className="dashboard-info" sx={{ borderRadius: '20px', border: '1px solid #FFB755'}}>
             <Typography className="info-title">신고 접수</Typography>
-            <Typography>전체: 45,912</Typography>
-            <Typography>오늘: 2</Typography>
+            <Box className="info-content">
+              <Box className="info-item">
+                <Typography>전체</Typography>
+                <Typography>45,912</Typography>
+              </Box>
+              <div className="horizontal-line"></div>
+              <Box className="info-item">
+                <Typography>오늘</Typography>
+                <Typography>2</Typography>
+              </Box>
+            </Box>
           </Paper>
         </Grid>
       </Grid>
       <Grid container spacing={2} sx={{ mt: 2 }}>
         <Grid item xs={12} md={6}>
-          <Paper className="dashboard-table">
+          <Paper className="dashboard-table" sx={{ borderRadius: '20px', border: '1px solid #FFB755'}}>
             <Typography className="table-title">신고 접수 내역</Typography>
             <TableContainer>
               <Table>
                 <TableHead>
                   <TableRow>
-                    <TableCell>no</TableCell>
-                    <TableCell>제목</TableCell>
-                    <TableCell>등록일자</TableCell>
-                    <TableCell>신고조회</TableCell>
+                    <TableCell align="center">no</TableCell>
+                    <TableCell align="center">제목</TableCell>
+                    <TableCell align="center">등록일자</TableCell>
+                    <TableCell align="center">신고조회</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
                   {reportData.map((row) => (
                     <TableRow key={row.id}>
-                      <TableCell>{row.id}</TableCell>
-                      <TableCell>{row.title}</TableCell>
-                      <TableCell>{row.date}</TableCell>
-                      <TableCell>{row.queries}</TableCell>
+                      <TableCell align="center">{row.id}</TableCell>
+                      <TableCell align="center">{row.title}</TableCell>
+                      <TableCell align="center">{row.date}</TableCell>
+                      <TableCell align="center">{row.queries}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -126,25 +153,25 @@ function Dashboard() {
           </Paper>
         </Grid>
         <Grid item xs={12} md={6}>
-          <Paper className="dashboard-table">
+          <Paper className="dashboard-table" sx={{ borderRadius: '20px', border: '1px solid #FFB755'}}>
             <Typography className="table-title">1:1문의 내역</Typography>
             <TableContainer>
               <Table>
                 <TableHead>
                   <TableRow>
-                    <TableCell>no</TableCell>
-                    <TableCell>제목</TableCell>
-                    <TableCell>구분</TableCell>
-                    <TableCell>관리</TableCell>
+                    <TableCell align="center">no</TableCell>
+                    <TableCell align="center">제목</TableCell>
+                    <TableCell align="center">구분</TableCell>
+                    <TableCell align="center">관리</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
                   {inquiryData.map((row) => (
                     <TableRow key={row.id}>
-                      <TableCell>{row.id}</TableCell>
-                      <TableCell>{row.title}</TableCell>
-                      <TableCell>{row.type}</TableCell>
-                      <TableCell>{row.control}</TableCell>
+                      <TableCell align="center">{row.id}</TableCell>
+                      <TableCell align="center">{row.title}</TableCell>
+                      <TableCell align="center">{row.type}</TableCell>
+                      <TableCell align="center">{row.status}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -155,23 +182,23 @@ function Dashboard() {
       </Grid>
       <Grid container spacing={2} sx={{ mt: 2 }}>
         <Grid item xs={12}>
-          <Paper className="dashboard-table">
+          <Paper className="dashboard-table" sx={{ borderRadius: '20px', border: '1px solid #FFB755'}}>
             <Typography className="table-title">최신 공지 사항</Typography>
             <TableContainer>
               <Table>
                 <TableHead>
                   <TableRow>
-                    <TableCell>no</TableCell>
-                    <TableCell>제목</TableCell>
-                    <TableCell>등록일자</TableCell>
+                    <TableCell align="center">no</TableCell>
+                    <TableCell align="center">제목</TableCell>
+                    <TableCell align="center">등록일자</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
                   {notices.map((notice) => (
                     <TableRow key={notice.id}>
-                      <TableCell>{notice.id}</TableCell>
-                      <TableCell>{notice.title}</TableCell>
-                      <TableCell>{notice.date}</TableCell>
+                      <TableCell align="center">{notice.id}</TableCell>
+                      <TableCell align="center">{notice.title}</TableCell>
+                      <TableCell align="center">{notice.date}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -183,5 +210,4 @@ function Dashboard() {
     </Box>
   );
 }
-
 export default Dashboard;

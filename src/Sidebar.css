@@ -99,14 +99,17 @@
   }
 
   .vertical-line {
-    position: absolute;
-    top: 20px;
+    position: fixed;
+    top: 0;
     left: 0;
     width: 4px; /* Adjust width as needed */
-    height: 138vh;
+    height: 100%;
     background-color: #FFB755; /* Adjust color as needed */
     margin-left: 186px;
   }
+  
+
+ 
 
 
 

@@ -1,70 +1,102 @@
 .dashboard-container {
-    display: flex;
-    flex-direction: column;
-    padding: 16px;
-  }
-  
-  .dashboard-header {
-    margin-bottom: 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .dashboard-title {
-    background-color: #FFB755;
-    color: white;
-    padding: 8px;
-    border-radius: 8px;
-  }
-  
-  .dashboard-summary {
-    padding: 8px 16px;
-    background-color: #FFB755;
-    color: white;
-    border-radius: 8px;
-  }
-  
-  .dashboard-chart {
-    padding: 16px;
-    background-color: #FFE4B5;
-  }
-  
-  .chart-title {
-    background-color: #FFB755;
-    color: white;
-    padding: 8px;
-    border-radius: 8px;
-  }
-  
-  .dashboard-info {
-    padding: 16px;
-    width: 428px;
-    height: 264px;
-  }
-  
-  .info-title {
-    background-color: #FFB755;
-    color: white;
-    padding: 8px;
-    border-radius: 8px;
-  }
-  
-  .dashboard-table {
-    padding: 16px;
-  }
-  
-  .table-title {
-    background-color: #FFB755;
-    color: white;
-    padding: 8px;
-    border-radius: 8px;
-  }
+  display: fixed;
+  flex-direction: column;
+  padding: 16px;
+  margin-top: 20px;
+}
 
-  .horizontal-line {
-    position: absolute;
-    width: 408px; /* Adjust width as needed */
-    height: 1.25px;
-    background-color: #FFB755; /* Adjust color as needed */
-  }
-  
+.dashboard-header {
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard-title {
+  background-color: #FFB755;
+  color: white;
+  padding: 8px;
+  border-radius: 15px;
+}
+
+.dashboard-summary {
+  padding: 8px;
+  padding-left: 462px;
+  background-color: #FFB755;
+  color: white;
+  border-radius: 15px;
+}
+
+.dashboard-chart {
+  background-color: white;
+  border-radius: 15px;
+
+}
+
+.chart-title {
+  background-color: #FFB755;
+  color: white;
+  padding: 8px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboard-info {
+  width: 408px;
+  height: 264px;
+  border-radius: 15px;
+}
+
+.info-title {
+  background-color: #FFB755;
+  color: white;
+  padding: 8px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.info-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 75%;
+  padding: 8px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+}
+
+
+.horizontal-line {
+  width: 100%;
+  height: 1px;
+  background-color: black;
+  margin: 8px;
+}
+
+
+
+.table-title {
+  background-color: #FFB755;
+  color: white;
+  padding: 8px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
+ 

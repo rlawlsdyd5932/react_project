@@ -3,6 +3,7 @@ import { Box, Typography, Button, List, ListItem, ListItemText } from '@mui/mate
 import { Link } from 'react-router-dom';
 import './Sidebar.css';
 
+
 function Sidebar() {
   return (
     <Box className="sidebar">
@@ -36,11 +37,11 @@ function Sidebar() {
           <img src="images/images/Acrobatics1.png" alt="공연/전시 정보" />
           <ListItemText primary="공연/전시 정보" />
         </ListItem>
-        <ListItem button component={Link} to="/announcements" className="announcements">
+        <ListItem button component={Link} to="/notice" className="notice">
           <img src="images/images/Alarm1.png" alt="공지사항 관리" />
           <ListItemText primary="공지사항 관리" />
         </ListItem>
-        <ListItem button component={Link} to="/support" className="support">
+        <ListItem button component={Link} to="/inquiry" className="inquiry">
           <img src="images/images/Online Support1.png" alt="1:1문의" />
           <ListItemText primary="1:1문의" />
         </ListItem>
