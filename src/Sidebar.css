@@ -1,0 +1,114 @@
+  .sidebar {
+    margin-left: -8px;
+  }
+
+  .sidebar-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 32px;
+  }
+  
+  .sidebar-logo {
+    width: 60px;
+    height: 60px; /* Adjust logo size as needed */
+    margin-bottom: 38px
+  }
+  
+  .sidebar-role-user {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .sidebar-role {
+    background-color: #FFB755;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 16px; /* Adjust to make it rounder */
+    margin-right: 8px;
+    font-size: 0.875rem; /* Adjust font size */
+    width: 69px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center the text both horizontally and vertically */
+  }
+  
+  .sidebar-user {
+    font-size: 0.875rem; /* Adjust font size */
+    padding: 5px;
+  }
+  
+  .sidebar-logout-container {
+    color: white;
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    background-color: #FFB755;
+    border-radius: 16px; /* Adjust to make it rounder */
+    padding: 4px 8px;
+    width: 144px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .sidebar-logout {
+    color: white; /* Set text color to white */
+    text-transform: none; /* Keep text capitalization as is */
+    border: none; /* Remove default button border */
+    background: none; /* Remove default button background */
+    font-size: 0.875rem; /* Adjust font size */
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+    
+  }
+  
+  .sidebar-logout img {
+    width: 16px; /* Adjust icon size as needed */
+    margin-left: 8px; /* Add space between text and image */
+  }
+  
+  .sidebar-menu {
+    width: 186px;
+    height: 128px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFB755;
+  }
+
+  .sidebar-menu .home {
+    color: white;
+  }
+  
+  .sidebar-menu .MuiListItem-root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 16px;
+    width: 100%;
+    margin-bottom: 100px;
+    
+  }
+  
+  .sidebar-menu .MuiListItem-root img {
+    margin-bottom: 8px;
+  }
+
+  .vertical-line {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 4px; /* Adjust width as needed */
+    height: 138vh;
+    background-color: #FFB755; /* Adjust color as needed */
+    margin-left: 186px;
+  }
+
+
+
+  
+  
