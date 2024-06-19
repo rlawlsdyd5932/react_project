@@ -1,15 +1,26 @@
-.dashboard-container {
-  display: fixed;
-  flex-direction: column;
-  padding: 16px;
-  margin-top: 20px;
+
+/*신고 접수 내역 및 기타*/
+.table-title-container {
+  background-color: #FFB755;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  border-radius: 15px;
+  margin-bottom: 20px;
 }
 
+/*셀 색깔*/
+.MuiTableCell-head {
+  background-color: #FFB755;
+  color: white;
+  font-weight: bold;
+}
+
+
+/*오늘의 허니팟 색깔*/
 .dashboard-header {
   margin-bottom: 16px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .dashboard-title {
@@ -27,12 +38,8 @@
   border-radius: 15px;
 }
 
-.dashboard-chart {
-  background-color: white;
-  border-radius: 15px;
 
-}
-
+/*차트 색깔*/
 .chart-title {
   background-color: #FFB755;
   color: white;
@@ -44,12 +51,7 @@
   align-items: center;
 }
 
-.dashboard-info {
-  width: 408px;
-  height: 264px;
-  border-radius: 15px;
-}
-
+/*매칭 횟수 및 기타*/
 .info-title {
   background-color: #FFB755;
   color: white;
@@ -94,7 +96,7 @@
 }
 
 
-
+/*신고 접수 내역 및 기타 흰색*/
 .table-title {
   background-color: #FFB755;
   color: white;

@@ -1,19 +1,12 @@
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow: hidden; /* Prevent scrolling on the body */
-}
-
 .container {
   display: flex;
   height: 100%;
 }
 
 .sidebar {
-  position: fixed;
+  position: relative;
   top: 0;
-  left: 0;
+  left: -8px;
   width: 140px; /* Adjust width as needed */
   height: 100%;
   background-color: #FFF; /* Adjust background color as needed */

@@ -30,8 +30,11 @@
   border-color: #FFB755;
 }
 
-
-
+.link {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+}
 
 .search-icon {
   width: 20px;

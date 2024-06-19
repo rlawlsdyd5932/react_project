@@ -42,7 +42,7 @@ function Dashboard() {
     { id: 35, title: '공연장에 몇 시까지 도착해야 하나요?', status: '답변완료', date: '2024-06-02', type: '행사/축제', control: '버튼' },
     { id: 34, title: '공연장에 갈 때 옷차림에 제한이 있나요?', status: '답변완료', date: '2024-06-01', type: '공연', control: '버튼' },
     { id: 33, title: '비어있는 좌석으로 자리를 옮겨도 되나요?', status: '답변완료', date: '2024-06-01', type: '팝업', control: '버튼' },
-    { id: 32, title: '공연시작 시산에 늦었어요.늦게라도 들어갈 수 있나요?', status: '답변완료', date: '2024-06-01', type: '뮤지컬', control: '버튼' },
+    { id: 32, title: '공연시작 시산에 늦었어요. 늦게라도 들어갈 수 있나요?', status: '답변완료', date: '2024-06-01', type: '뮤지컬', control: '버튼' },
   ];
 
   const notices = [
@@ -56,8 +56,9 @@ function Dashboard() {
   return (
     <Box className="dashboard-container" sx={{ maxWidth: '1600px', width: '100%', margin: '0 auto', padding: '16px' }}>
       <Box className="dashboard-header">
-        <Box className="dashboard-title">오늘의 허니팟
-        <Typography variant="h7" className="dashboard-summary">20개</Typography>
+        <Box className="dashboard-title">
+          <Typography variant="h6">오늘의 허니팟</Typography>
+          <Typography variant="h7" className="dashboard-summary">20개</Typography>
         </Box>
       </Box>
       <Grid container spacing={2}>
@@ -121,7 +122,9 @@ function Dashboard() {
       <Grid container spacing={2} sx={{ mt: 2 }}>
         <Grid item xs={12} md={6}>
           <Paper className="dashboard-table" sx={{ borderRadius: '20px', border: '1px solid #FFB755'}}>
-            <Typography className="table-title">신고 접수 내역</Typography>
+            <Box className="table-title-container">
+              <Typography className="table-title">신고 접수 내역</Typography>
+            </Box>
             <TableContainer>
               <Table>
                 <TableHead>
@@ -148,7 +151,9 @@ function Dashboard() {
         </Grid>
         <Grid item xs={12} md={6}>
           <Paper className="dashboard-table" sx={{ borderRadius: '20px', border: '1px solid #FFB755'}}>
-            <Typography className="table-title">1:1문의 내역</Typography>
+            <Box className="table-title-container">
+              <Typography className="table-title">1:1문의 내역</Typography>
+            </Box>
             <TableContainer>
               <Table>
                 <TableHead>
@@ -177,7 +182,9 @@ function Dashboard() {
       <Grid container spacing={2} sx={{ mt: 2 }}>
         <Grid item xs={12}>
           <Paper className="dashboard-table" sx={{ borderRadius: '20px', border: '1px solid #FFB755'}}>
-            <Typography className="table-title">최신 공지 사항</Typography>
+            <Box className="table-title-container">
+              <Typography className="table-title">최신 공지 사항</Typography>
+            </Box>
             <TableContainer>
               <Table>
                 <TableHead>
@@ -191,7 +198,7 @@ function Dashboard() {
                   {notices.map((notice) => (
                     <TableRow key={notice.id}>
                       <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)' }} align="center">{notice.id}</TableCell>
-                      <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)' }}  align="center">{notice.title}</TableCell>
+                      <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)' }} align="center">{notice.title}</TableCell>
                       <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)' }} align="center">{notice.date}</TableCell>
                     </TableRow>
                   ))}
