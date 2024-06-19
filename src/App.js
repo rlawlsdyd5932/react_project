@@ -13,8 +13,7 @@ function App() {
         <Sidebar />
         <div style={{ flex: 1, padding: '16px', overflowY: 'auto', height: '100vh' }}>
           <Routes>
-            <Route index element={<Dashboard />} />
-            <Route path="/" element={<Dashboard />} />
+            <Route path="/" element={<Sidebar />} />
             <Route path="/customer" element={<Customer />} />
           </Routes>
         </div>

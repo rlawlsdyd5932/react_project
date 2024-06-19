@@ -1,36 +1,45 @@
 .member-table-container {
-  padding: 16px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  justify-content: space-between;
 }
 
 .table-title {
-  margin-bottom: 16px;
-  font-weight: bold;
-  color: white;
+  margin-right: 20px;
+  padding-right: 20px;
+  background-color: white;
+  color: black;
+  width: 201px;
+  height: 32px;
+  
+}
+
+.table-content {
+  background-color: #FFB755;
 }
 
 .search-field {
-  width: 300px;
-  margin-bottom: 16px;
+  width: 302px;
+  height: 40px;
+  top: -10px;
+  border-color: #FFB755;
 }
 
+
+
+
 .search-icon {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
 }
 
 .pagination {
-  margin-top: 16px;
+  margin-top: 20px;
   display: flex;
   justify-content: center;
-}
-
-.MuiTableCell-root {
-  padding: 8px;
-}
-
-.MuiTableRow-root:nth-of-type(odd) {
-  background-color: #f9f9f9;
 }

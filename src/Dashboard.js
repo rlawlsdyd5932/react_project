@@ -54,7 +54,7 @@ function Dashboard() {
   ];
 
   return (
-    <Box className="dashboard-container">
+    <Box className="dashboard-container" sx={{ maxWidth: '1600px', width: '100%', margin: '0 auto', padding: '16px' }}>
       <Box className="dashboard-header">
         <Box className="dashboard-title">오늘의 허니팟
         <Typography variant="h7" className="dashboard-summary">20개</Typography>
@@ -74,56 +74,50 @@ function Dashboard() {
           </Paper>
         </Grid>
       </Grid>
-      <Grid container spacing={2} sx={{ mt: 2 }} direction="row">
-        <Grid item>
-          <Paper className="dashboard-info" sx={{ borderRadius: '20px', border: '1px solid #FFB755'}}>
-            <Typography className="info-title">매칭 횟수</Typography>
-            <Box className="info-content">
-              <Box className="info-item">
-                <Typography>전체</Typography>
-                <Typography>45,912</Typography>
-              </Box>
-              <div className="horizontal-line"></div>
-              <Box className="info-item">
-                <Typography>오늘</Typography>
-                <Typography>546</Typography>
-              </Box>
+      <Box className="dashboard-info-container" sx={{ mt: 2 }}>
+        <Paper className="dashboard-info" sx={{ borderRadius: '20px', border: '1px solid #FFB755' }}>
+          <Typography className="info-title">매칭 횟수</Typography>
+          <Box className="info-content">
+            <Box className="info-item">
+              <Typography>전체</Typography>
+              <Typography>45,912</Typography>
             </Box>
-          </Paper>
-        </Grid>
-        <Grid item>
-          <Paper className="dashboard-info" sx={{ borderRadius: '20px', border: '1px solid #FFB755'}}>
-            <Typography className="info-title">1:1문의</Typography>
-            <Box className="info-content">
-              <Box className="info-item">
-                <Typography>전체</Typography>
-                <Typography>45,912</Typography>
-              </Box>
-              <div className="horizontal-line"></div>
-              <Box className="info-item">
-                <Typography>오늘</Typography>
-                <Typography>2</Typography>
-              </Box>
+            <div className="horizontal-line"></div>
+            <Box className="info-item">
+              <Typography>오늘</Typography>
+              <Typography>546</Typography>
             </Box>
-          </Paper>
-        </Grid>
-        <Grid item>
-          <Paper className="dashboard-info" sx={{ borderRadius: '20px', border: '1px solid #FFB755'}}>
-            <Typography className="info-title">신고 접수</Typography>
-            <Box className="info-content">
-              <Box className="info-item">
-                <Typography>전체</Typography>
-                <Typography>45,912</Typography>
-              </Box>
-              <div className="horizontal-line"></div>
-              <Box className="info-item">
-                <Typography>오늘</Typography>
-                <Typography>2</Typography>
-              </Box>
+          </Box>
+        </Paper>
+        <Paper className="dashboard-info" sx={{ borderRadius: '20px', border: '1px solid #FFB755' }}>
+          <Typography className="info-title">1:1문의</Typography>
+          <Box className="info-content">
+            <Box className="info-item">
+              <Typography>전체</Typography>
+              <Typography>45,912</Typography>
             </Box>
-          </Paper>
-        </Grid>
-      </Grid>
+            <div className="horizontal-line"></div>
+            <Box className="info-item">
+              <Typography>오늘</Typography>
+              <Typography>2</Typography>
+            </Box>
+          </Box>
+        </Paper>
+        <Paper className="dashboard-info" sx={{ borderRadius: '20px', border: '1px solid #FFB755' }}>
+          <Typography className="info-title">신고 접수</Typography>
+          <Box className="info-content">
+            <Box className="info-item">
+              <Typography>전체</Typography>
+              <Typography>45,912</Typography>
+            </Box>
+            <div className="horizontal-line"></div>
+            <Box className="info-item">
+              <Typography>오늘</Typography>
+              <Typography>2</Typography>
+            </Box>
+          </Box>
+        </Paper>
+      </Box>
       <Grid container spacing={2} sx={{ mt: 2 }}>
         <Grid item xs={12} md={6}>
           <Paper className="dashboard-table" sx={{ borderRadius: '20px', border: '1px solid #FFB755'}}>
@@ -132,19 +126,19 @@ function Dashboard() {
               <Table>
                 <TableHead>
                   <TableRow>
-                    <TableCell align="center">no</TableCell>
-                    <TableCell align="center">제목</TableCell>
-                    <TableCell align="center">등록일자</TableCell>
-                    <TableCell align="center">신고조회</TableCell>
+                    <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)' }} align="center">no</TableCell>
+                    <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)' }} align="center">제목</TableCell>
+                    <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)' }} align="center">등록일자</TableCell>
+                    <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)' }} align="center">신고조회</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
                   {reportData.map((row) => (
                     <TableRow key={row.id}>
-                      <TableCell align="center">{row.id}</TableCell>
-                      <TableCell align="center">{row.title}</TableCell>
-                      <TableCell align="center">{row.date}</TableCell>
-                      <TableCell align="center">{row.queries}</TableCell>
+                      <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)' }} align="center">{row.id}</TableCell>
+                      <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)' }} align="center">{row.title}</TableCell>
+                      <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)' }} align="center">{row.date}</TableCell>
+                      <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)' }} align="center">{row.queries}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -159,19 +153,19 @@ function Dashboard() {
               <Table>
                 <TableHead>
                   <TableRow>
-                    <TableCell align="center">no</TableCell>
-                    <TableCell align="center">제목</TableCell>
-                    <TableCell align="center">구분</TableCell>
-                    <TableCell align="center">관리</TableCell>
+                    <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)' }} align="center">no</TableCell>
+                    <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)' }} align="center">제목</TableCell>
+                    <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)' }} align="center">구분</TableCell>
+                    <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)' }} align="center">관리</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
                   {inquiryData.map((row) => (
                     <TableRow key={row.id}>
-                      <TableCell align="center">{row.id}</TableCell>
-                      <TableCell align="center">{row.title}</TableCell>
-                      <TableCell align="center">{row.type}</TableCell>
-                      <TableCell align="center">{row.status}</TableCell>
+                      <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)' }} align="center">{row.id}</TableCell>
+                      <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)' }} align="center">{row.title}</TableCell>
+                      <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)' }} align="center">{row.type}</TableCell>
+                      <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)' }} align="center">{row.status}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -188,17 +182,17 @@ function Dashboard() {
               <Table>
                 <TableHead>
                   <TableRow>
-                    <TableCell align="center">no</TableCell>
-                    <TableCell align="center">제목</TableCell>
-                    <TableCell align="center">등록일자</TableCell>
+                    <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)' }} align="center">no</TableCell>
+                    <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)' }} align="center">제목</TableCell>
+                    <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)' }} align="center">등록일자</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
                   {notices.map((notice) => (
                     <TableRow key={notice.id}>
-                      <TableCell align="center">{notice.id}</TableCell>
-                      <TableCell align="center">{notice.title}</TableCell>
-                      <TableCell align="center">{notice.date}</TableCell>
+                      <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)' }} align="center">{notice.id}</TableCell>
+                      <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)' }}  align="center">{notice.title}</TableCell>
+                      <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)' }} align="center">{notice.date}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>

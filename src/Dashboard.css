@@ -67,6 +67,17 @@
   padding: 8px;
 }
 
+.dashboard-info-container {
+  display: flex;
+  gap: 23px; /* Space between .dashboard-info elements */
+}
+
+.dashboard-info { /* Adjust height based on padding or margins */
+  width: 624px;
+  height: 267px;
+  border-radius: 20px;
+}
+
 .info-item {
   display: flex;
   align-items: center;
