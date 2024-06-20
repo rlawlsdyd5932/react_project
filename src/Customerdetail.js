@@ -1,10 +1,13 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { Box, Typography, TextField, Button, Grid } from '@mui/material';
 import './Customerdetail.css';
 
 function CustomerDetail() {
   const { id } = useParams();
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const members = [
     { id: 'user001', nickname: 'userone', gender: '남', email: 'userone@gmail.com', date: '2024-06-23' },
     { id: 'user002', nickname: 'usertwo', gender: '여', email: 'usertwo@gmail.com', date: '2024-06-23' },
@@ -17,6 +20,11 @@ function CustomerDetail() {
   if (!member) {
     return <Typography>회원 정보를 찾을 수 없습니다.</Typography>;
   }
+
+  const handleConfirmClick = () => {
+    const from = location.state?.from || '/customer'; // 기본값을 '/customer'로 설정
+    navigate(from);
+  };
 
   return (
     <Box className="customer-detail-container">
@@ -66,7 +74,7 @@ function CustomerDetail() {
         </Grid>
         <Grid item xs={12} className="button-container">
           <Button variant="outlined" className="cancel-button">취소</Button>
-          <Button variant="contained" className="confirm-button">확인</Button>
+          <Button variant="contained" className="confirm-button" onClick={handleConfirmClick}>확인</Button>
         </Grid>
       </Grid>
     </Box>

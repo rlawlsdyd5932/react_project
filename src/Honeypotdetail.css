@@ -67,3 +67,36 @@
   .honeypot-action-button-contained:hover {
     background-color: #FFA726 !important; /* Slightly darker shade for hover */
   }
+
+
+
+  /* Custom dialog styles */
+.custom-dialog-content {
+  text-align: center !important; 
+}
+
+.dialog-icon {
+  width: 40px !important;
+  height: 40px !important;
+  margin-bottom: 10px !important;
+}
+
+.dialog-text {
+  margin-bottom: 20px !important;
+  color: black !important;
+}
+
+.custom-dialog-actions {
+  justify-content: center !important;
+}
+
+.custom-cancel-button {
+  border: 1px solid #FFB755 !important;
+  color: #FFB755 !important;
+  margin-right: 10px !important;
+}
+
+.custom-confirm-button {
+  background-color: #FFB755 !important;
+  color: #fff !important;
+}

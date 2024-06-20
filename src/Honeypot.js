@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import {
   Box,
   Typography,
@@ -12,46 +12,64 @@ import {
   TableRow,
   Paper,
   Pagination,
+  Button
 } from '@mui/material';
 import './Honeypot.css';
 
-const rows = [
+const initialRows = [
   { no: 37, title: 'XX 같이 볼사람 1', date: '2024-06-03', report: 3, status: '활성화' },
   { no: 36, title: 'XX 같이 볼사람 1', date: '2024-06-03', report: 0, status: '활성화' },
-  { no: 35, title: 'XX 같이 볼사람 1', date: '2024-06-03', report: 0, status: '활성화' },
-  { no: 34, title: 'XX 같이 볼사람 1', date: '2024-06-03', report: 0, status: '활성화' },
-  { no: 33, title: 'XX 같이 볼사람 1', date: '2024-06-03', report: 0, status: '활성화' },
-  { no: 32, title: 'XX 같이 볼사람 1', date: '2024-06-03', report: 0, status: '활성화' },
-  { no: 31, title: 'XX 같이 볼사람 1', date: '2024-06-03', report: 0, status: '활성화' },
-  { no: 30, title: 'XX 같이 볼사람 1', date: '2024-06-03', report: 0, status: '활성화' },
-  { no: 29, title: 'XX 같이 볼사람 1', date: '2024-06-03', report: 0, status: '활성화' },
-  { no: 28, title: 'XX 같이 볼사람 1', date: '2024-06-03', report: 0, status: '활성화' },
-  { no: 27, title: 'XX 같이 볼사람 1', date: '2024-06-03', report: 0, status: '활성화' },
-  { no: 26, title: 'XX 같이 볼사람 1', date: '2024-06-03', report: 0, status: '활성화' },
-  { no: 25, title: 'XX 같이 볼사람 1', date: '2024-06-03', report: 0, status: '활성화' },
-  { no: 24, title: 'XX 같이 볼사람 1', date: '2024-06-03', report: 0, status: '활성화' },
-  { no: 23, title: 'XX 같이 볼사람 1', date: '2024-06-03', report: 0, status: '활성화' },
-  { no: 22, title: 'XX 같이 볼사람 1', date: '2024-06-03', report: 0, status: '활성화' },
-  { no: 21, title: 'XX 같이 볼사람 1', date: '2024-06-03', report: 0, status: '활성화' },
-  { no: 20, title: 'XX 같이 볼사람 1', date: '2024-06-03', report: 0, status: '활성화' },
-  { no: 19, title: 'XX 같이 볼사람 1', date: '2024-06-03', report: 0, status: '활성화' },
-  { no: 18, title: 'XX 같이 볼사람 1', date: '2024-06-03', report: 0, status: '활성화' },
+  // ... 기타 데이터 생략 ...
 ];
 
 function Honeypot() {
   const [page, setPage] = useState(1);
   const rowsPerPage = 5;
   const navigate = useNavigate();
+  const location = useLocation();
+  const [rows, setRows] = useState(initialRows);
+
+  // Get the current page number from the URL query parameters
+  const query = new URLSearchParams(location.search);
+  const currentPage = parseInt(query.get('page') || '1', 10);
+
+  useEffect(() => {
+    setPage(currentPage);
+  }, [currentPage]);
+
+  useEffect(() => {
+    if (location.state?.toggleStatus) {
+      setRows(prevRows => 
+        prevRows.map(row => 
+          row.no === location.state.toggleStatus.no ? { ...row, status: location.state.toggleStatus.newStatus } : row
+        )
+      );
+      navigate(location.pathname + location.search, { replace: true, state: {} });
+    }
+  }, [location.state, navigate, location.pathname, location.search]);
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
+    if (newPage === 1) {
+      navigate('/honeypot');
+    } else {
+      navigate(`/honeypot?page=${newPage}`);
+    }
+  };
+
+  const handleRowClick = (no) => {
+    navigate(`/honeypot/${no}`, { state: { from: location.pathname + location.search } });
+  };
+
+  const handleToggleStatus = (no) => {
+    setRows(prevRows => 
+      prevRows.map(row => 
+        row.no === no ? { ...row, status: row.status === '활성화' ? '비활성화' : '활성화' } : row
+      )
+    );
   };
 
   const displayedRows = rows.slice((page - 1) * rowsPerPage, page * rowsPerPage);
-
-  const handleRowClick = (no) => {
-    navigate(`/honeypot/${no}`);
-  };
 
   return (
     <Box component="main" className="honeypot-main">
@@ -89,8 +107,8 @@ function Honeypot() {
               <TableRow key={row.no}>
                 <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)' }} align="center">{row.no}</TableCell>
                 <TableCell
-                  onClick={row.report > 0 ? () => handleRowClick(row.no) : undefined}
-                  style={{ cursor: row.report > 0 ? 'pointer' : 'default' }}
+                  onClick={() => handleRowClick(row.no)}
+                  style={{ cursor: 'pointer' }}
                   sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)' }}
                   align="center"
                 >
@@ -99,9 +117,11 @@ function Honeypot() {
                 <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)' }} align="center">{row.date}</TableCell>
                 <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)' }} align="center">{row.report}</TableCell>
                 <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)' }} align="center">
-                  <Box className="status-cell">
-                    {row.status}
-                  </Box>
+                  <Button 
+                    variant="outlined" 
+                  >
+                    {row.status === '활성화' ? '비활성화' : '활성화'}
+                  </Button>
                 </TableCell>
               </TableRow>
             ))}
