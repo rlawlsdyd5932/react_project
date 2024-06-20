@@ -47,7 +47,7 @@ function CustomerDetail() {
             <Typography className="detail-value">카카오톡</Typography>
           </div>
         </Grid>
-        <Grid item xs={12} sm={6} className="profile-picture-container">
+        <Grid item xs={12} sm={6} className="profile-content-container">
           <Typography className="profile-content">프로필 사진</Typography>
           <Box className="profile-picture">
             <Typography>등록된 프로필이 없습니다.</Typography>
@@ -61,12 +61,12 @@ function CustomerDetail() {
             defaultValue="자기소개 글 입니다."
             variant="outlined"
             fullWidth
-            InputProps={{ style: { borderRadius: 15, borderColor: '#FFB755' }, readOnly: true }} /* 읽기 전용 설정 */
+            InputProps={{ readOnly: true, className: "text-field-input" }} /* 읽기 전용 설정 */
           />
         </Grid>
         <Grid item xs={12} className="button-container">
-          <Button variant="outlined" style={{ borderColor: '#FFB755', color: '#FFB755' }}>취소</Button>
-          <Button variant="contained" style={{ backgroundColor: '#FFB755', marginLeft: 8 }}>확인</Button>
+          <Button variant="outlined" className="cancel-button">취소</Button>
+          <Button variant="contained" className="confirm-button">확인</Button>
         </Grid>
       </Grid>
     </Box>

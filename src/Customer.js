@@ -36,7 +36,7 @@ return (
       <Typography variant="h6" className="table-title">회원 전체 조회</Typography>
       <TextField 
         variant="outlined"
-        placeholder="회원 검색"
+        placeholder="회원 코드 검색"
         className="search-field"
         InputProps={{
           endAdornment: (
@@ -79,6 +79,15 @@ return (
       page={page}
       onChange={handlePageChange}
       className="pagination"
+      sx={{
+        '.MuiPaginationItem-root': {
+          color: 'primary',
+          '&.Mui-selected': {
+            backgroundColor: '#FFB755',
+            color: '#fff',
+          },
+        },
+      }}
     />
   </Box>
 );

@@ -1,4 +1,7 @@
 
+.customer-detail-container {
+    margin-top: 180px; /* Adjust the value to shift the component down as needed */
+  }
 
 .customer-detail-grid {
     width: 100%;
@@ -11,7 +14,7 @@
 
 .detail-label {
     font-weight: bold;
-    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 .detail-value {
@@ -20,16 +23,12 @@
     border-bottom: 1px solid #ccc; /* 밑줄 추가 */
 }
 
-.profile-picture-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 .profile-content {
-    margin-bottom: 10px;
     font-weight: bold;
     text-align: center;
+    margin-bottom: 10px;
+    padding-right: 220px
 }
 
 .profile-picture {
@@ -39,8 +38,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 10px;
+    margin: auto;
+   
+    
 }
+
 
 .button-container {
     display: flex;

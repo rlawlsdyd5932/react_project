@@ -4,7 +4,8 @@ import Sidebar from './Sidebar';
 import Dashboard from './Dashboard';
 import Customer from './Customer';
 import CustomerDetail from './Customerdetail';
-
+import Honeypot from './Honeypot';
+import HoneypotDetail from './Honeypotdetail';
 function App() {
   return (
     <Router>
@@ -16,6 +17,8 @@ function App() {
             <Route path="/home" element={<Dashboard />} />
             <Route path="/customer" element={<Customer />} />
             <Route path="/customer/:id" element={<CustomerDetail />} />
+            <Route path='/honeypot' element={<Honeypot />} />
+            <Route path="/honeypot/:no" element={<HoneypotDetail />} />
           </Routes>
         </div>
       </div>

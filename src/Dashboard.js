@@ -56,8 +56,8 @@ function Dashboard() {
   return (
     <Box className="dashboard-container" sx={{ maxWidth: '1600px', width: '100%', margin: '0 auto', padding: '16px' }}>
       <Box className="dashboard-header">
+        <Typography variant="h6">오늘의 허니팟</Typography>
         <Box className="dashboard-title">
-          <Typography variant="h6">오늘의 허니팟</Typography>
           <Typography variant="h7" className="dashboard-summary">20개</Typography>
         </Box>
       </Box>
@@ -123,16 +123,16 @@ function Dashboard() {
         <Grid item xs={12} md={6}>
           <Paper className="dashboard-table" sx={{ borderRadius: '20px', border: '1px solid #FFB755'}}>
             <Box className="table-title-container">
-              <Typography className="table-title">신고 접수 내역</Typography>
+              <Typography className="table-title" sx={{backgroundColor:'#FFB755', color:'white', margin:'auto'}}>신고 접수 내역</Typography>
             </Box>
             <TableContainer>
               <Table>
                 <TableHead>
                   <TableRow>
-                    <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)' }} align="center">no</TableCell>
-                    <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)' }} align="center">제목</TableCell>
-                    <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)' }} align="center">등록일자</TableCell>
-                    <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)' }} align="center">신고조회</TableCell>
+                    <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)', color:'white' }} align="center">no</TableCell>
+                    <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)', color:'white' }} align="center">제목</TableCell>
+                    <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)', color:'white' }} align="center">등록일자</TableCell>
+                    <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)', color:'white' }} align="center">신고조회</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -152,16 +152,16 @@ function Dashboard() {
         <Grid item xs={12} md={6}>
           <Paper className="dashboard-table" sx={{ borderRadius: '20px', border: '1px solid #FFB755'}}>
             <Box className="table-title-container">
-              <Typography className="table-title">1:1문의 내역</Typography>
+              <Typography className="table-title" sx={{backgroundColor:'#FFB755', color:'white', margin:'auto'}}>1:1문의 내역</Typography>
             </Box>
             <TableContainer>
               <Table>
                 <TableHead>
                   <TableRow>
-                    <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)' }} align="center">no</TableCell>
-                    <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)' }} align="center">제목</TableCell>
-                    <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)' }} align="center">구분</TableCell>
-                    <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)' }} align="center">관리</TableCell>
+                    <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)', color:'white' }} align="center">no</TableCell>
+                    <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)', color:'white' }} align="center">제목</TableCell>
+                    <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)', color:'white' }} align="center">구분</TableCell>
+                    <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)', color:'white' }} align="center">관리</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -183,15 +183,15 @@ function Dashboard() {
         <Grid item xs={12}>
           <Paper className="dashboard-table" sx={{ borderRadius: '20px', border: '1px solid #FFB755'}}>
             <Box className="table-title-container">
-              <Typography className="table-title">최신 공지 사항</Typography>
+              <Typography className="table-title" sx={{backgroundColor:'#FFB755', color:'white', margin:'auto'}}>최신 공지 사항</Typography>
             </Box>
             <TableContainer>
               <Table>
                 <TableHead>
                   <TableRow>
-                    <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)' }} align="center">no</TableCell>
-                    <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)' }} align="center">제목</TableCell>
-                    <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)' }} align="center">등록일자</TableCell>
+                    <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)', color:'white' }} align="center">no</TableCell>
+                    <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)', color:'white' }} align="center">제목</TableCell>
+                    <TableCell sx={{ borderRight: '1px solid rgba(224, 224, 224, 1)', color:'white' }} align="center">등록일자</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
