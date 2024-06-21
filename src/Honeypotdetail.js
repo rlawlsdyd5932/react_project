@@ -4,7 +4,7 @@ import { Box, Typography, Button, Grid, Dialog, DialogActions, DialogContent, Di
 import './Honeypotdetail.css';
 
 function HoneypotDetail() {
-  const { id } = useParams();
+  const { no } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
   const [open, setOpen] = useState(false);
@@ -25,13 +25,13 @@ function HoneypotDetail() {
   const handleToggleStatus = () => {
     setOpen(false);
     const from = location.state?.from || '/honeypot'; // 기본값을 '/honeypot'로 설정
-    const currentStatus = rows[0].status;
+    const currentStatus = location.state?.status;
     const newStatus = currentStatus === '활성화' ? '비활성화' : '활성화';
-    navigate(from, { state: { toggleStatus: { no: parseInt(id, 10), newStatus } } });
+    navigate(from, { state: { toggleStatus: { no: parseInt(no, 10), newStatus } } });
   };
 
   const rows = [
-    { no: 37, title: 'XX 같이 볼 20대 친구 구합니다😁 남녀 상관없음~!', 모집상태: '모집중', 모집인원: '1/2', 신고횟수: '3', 생성일자: '2024-06-03', 장르: '뮤지컬', status: '활성화' }
+    { no, title: 'XX 같이 볼 20대 친구 구합니다😁 남녀 상관없음~!', 모집상태: '모집중', 모집인원: '1/2', 신고횟수: '3', 생성일자: '2024-06-03', 장르: '뮤지컬', status: location.state?.status }
   ];
 
   return (
@@ -96,7 +96,7 @@ function HoneypotDetail() {
       <Dialog open={open} onClose={handleClose}>
         <DialogContent className="custom-dialog-content">
           <DialogContentText className="dialog-text">
-            해당 게시물을 {rows[0].status === '활성화' ? '비활성화' : '활성화'} 하시겠습니까?
+            해당 게시물을 {rows[0].status === '활성화' ? '비활성화' : '재활성화'} 하시겠습니까?
           </DialogContentText>
         </DialogContent>
         <DialogActions className="custom-dialog-actions">
